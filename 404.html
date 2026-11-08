@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Not found</title>
+    <script>
+      // Old lowercase tool links (any deeper path) move to the capitalised repo path.
+      var moved = {"goldium":"Goldium","gridium":"Gridium","heaterium":"Heaterium","liquidium":"Liquidium","morphium":"Morphium","printium":"Printium","refractium":"Refractium","scrub":"Scrub"};
+      var parts = location.pathname.split("/");
+      var to = moved[(parts[1] || "").toLowerCase()];
+      if (to && parts[1] !== to) location.replace("/" + to + "/" + parts.slice(2).join("/") + location.search + location.hash);
+    </script>
+  </head>
+  <body><p>Page not found.</p></body>
+</html>
